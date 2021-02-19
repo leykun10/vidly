@@ -2,13 +2,11 @@
 const express= require('express')
 const Joi = require('joi')
 const mongoose = require('mongoose')
-const { getgid } = require('process')
+const {Genre,validate} = require('../models/genre')
 const router = express.Router()
 
 
-const Genre = mongoose.model('genre',mongoose.Schema({
-    name:{type:String,required:true,maxlength:20}
-}))
+
  
 
 
@@ -156,14 +154,6 @@ async function deleteGenre(id){
 
 }
 
-function validate(genre){
- let schema = Joi.object({
-     "name":Joi.string().min(3).required()
- })
- const {error,result}= schema.validate(genre);
- if(error){
-     throw error;
- }
-}
+
 
 module.exports=router

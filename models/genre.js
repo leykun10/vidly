@@ -14,6 +14,7 @@ function validate(genre){
         throw error;
     }
    }
-
+  
    exports.Genre = Genre;
    exports.validate = validate;
+   
