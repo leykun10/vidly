@@ -109,11 +109,11 @@ async function createCustomer(newCustomer){
             phone_number:newCustomer.phone_number
         })
         
-        const result =await  customer.save()
+        await  customer.save()
     
         return {
             "error":null,
-            "result":result
+            "result":customer
         }
     }
     catch(error){

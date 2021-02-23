@@ -9,7 +9,7 @@ const Movie = mongoose.model('movie',mongoose.Schema({
    genre:{
           type:mongoose.Schema({
             name:{type:String,required:true,maxlength:20}
-        }),
+        }), 
    },
    number_in_stock:{type:Number,required:true},
    daily_rental_rate:{type:Number,required:true},
@@ -19,7 +19,7 @@ const Movie = mongoose.model('movie',mongoose.Schema({
 function validate(movie){
     let schema = Joi.object({
         "title":Joi.string().required(),
-        "genreId":Joi.string().required(),
+        "genreId":Joi.objectId.required(),
          "number_in_stock":Joi.number().required(),
         "daily_rental_rate":Joi.number().required()
     })

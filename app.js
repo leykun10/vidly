@@ -1,8 +1,11 @@
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi) 
 const express = require('express')
 const mongoose = require('mongoose')
 const genreRouter = require('./router/genres')
 const customerRouter=require('./router/customers')
 const movieRouter = require('./router/movies')
+const rentalRouter = require('./router/rental')
 const app = express()
 
 
@@ -20,6 +23,7 @@ app.use(function (error, req, res, next) {
 app.use('/api/genre',genreRouter)
 app.use('/api/customer',customerRouter)
 app.use('/api/movie',movieRouter)
+app.use('/api/rental',rentalRouter)
 
 app.listen(8080,()=>{
     console.log(

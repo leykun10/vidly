@@ -102,10 +102,10 @@ async function createGenre(newGenre){
         const genre = new Genre({
             name:newGenre.name
         })
-        const result =await  genre.save()
+        genre.save()
         return {
             "error":null,
-            "result":result
+            "result":genre
         }
     }
     catch(error){

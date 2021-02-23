@@ -24,6 +24,7 @@ function validate(customer){
     }
    
    }
+   
 
    exports.Customer = Customer;
    exports.validate = validate;

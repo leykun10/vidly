@@ -11,7 +11,6 @@ console.log('delete')
  
 
 
-
 router.get('/',async (req,res)=>{
     const {error,result} =await getMovies()
     if(error!=null) return res.status(404).send('Sorry, cant find that');
@@ -113,10 +112,10 @@ async function createMovie(newMovie){
             daily_rental_rate:newMovie.daily_rental_rate
 
         })
-        const result =await  movie.save()
+        await  movie.save()
         return {
             "error":null,
-            "result":result
+            "result":movie
         }
     }
     catch(error){
